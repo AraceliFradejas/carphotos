@@ -43,6 +43,7 @@
             font-size: 14px;
             word-break: break-all;
             cursor: pointer;
+            min-height: 20px;
         }
         .url-box:hover {
             background: #e9ecef;
@@ -64,111 +65,81 @@
         .copy-btn:hover {
             background: #0056b3;
         }
+        .photo-name {
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #333;
+        }
     </style>
 </head>
 <body>
     <h1>Car Photos - URLs para PowerApps</h1>
-    <div class="container">
-        
-        <div class="photo-item">
-            <img src="kelcetsbs_car3.webp" alt="Car 3" onclick="openImage('kelcetsbs_car3.webp')">
-            <div class="url-box" onclick="copyToClipboard(this)">
-                https://chaphotos.vercel.app/kelcetsbs_car3.webp
-                <button class="copy-btn" onclick="event.stopPropagation(); copyToClipboard(this.parentElement)">Copiar</button>
-            </div>
-        </div>
-
-        <div class="photo-item">
-            <img src="kelcetsbs_car4.avif" alt="Car 4" onclick="openImage('kelcetsbs_car4.avif')">
-            <div class="url-box" onclick="copyToClipboard(this)">
-                https://chaphotos.vercel.app/kelcetsbs_car4.avif
-                <button class="copy-btn" onclick="event.stopPropagation(); copyToClipboard(this.parentElement)">Copiar</button>
-            </div>
-        </div>
-
-        <div class="photo-item">
-            <img src="kelcetsbs_car6.jpg" alt="Car 6" onclick="openImage('kelcetsbs_car6.jpg')">
-            <div class="url-box" onclick="copyToClipboard(this)">
-                https://chaphotos.vercel.app/kelcetsbs_car6.jpg
-                <button class="copy-btn" onclick="event.stopPropagation(); copyToClipboard(this.parentElement)">Copiar</button>
-            </div>
-        </div>
-
-        <div class="photo-item">
-            <img src="kelcetsbs_car7.webp" alt="Car 7" onclick="openImage('kelcetsbs_car7.webp')">
-            <div class="url-box" onclick="copyToClipboard(this)">
-                https://chaphotos.vercel.app/kelcetsbs_car7.webp
-                <button class="copy-btn" onclick="event.stopPropagation(); copyToClipboard(this.parentElement)">Copiar</button>
-            </div>
-        </div>
-
-        <div class="photo-item">
-            <img src="kelcetsbs_car8.jpg" alt="Car 8" onclick="openImage('kelcetsbs_car8.jpg')">
-            <div class="url-box" onclick="copyToClipboard(this)">
-                https://chaphotos.vercel.app/kelcetsbs_car8.jpg
-                <button class="copy-btn" onclick="event.stopPropagation(); copyToClipboard(this.parentElement)">Copiar</button>
-            </div>
-        </div>
-
-        <div class="photo-item">
-            <img src="kelcetsbs_car9.jpg" alt="Car 9" onclick="openImage('kelcetsbs_car9.jpg')">
-            <div class="url-box" onclick="copyToClipboard(this)">
-                https://chaphotos.vercel.app/kelcetsbs_car9.jpg
-                <button class="copy-btn" onclick="event.stopPropagation(); copyToClipboard(this.parentElement)">Copiar</button>
-            </div>
-        </div>
-
-        <div class="photo-item">
-            <img src="kelsetsbs_car1.jpg" alt="Car 1" onclick="openImage('kelsetsbs_car1.jpg')">
-            <div class="url-box" onclick="copyToClipboard(this)">
-                https://chaphotos.vercel.app/kelsetsbs_car1.jpg
-                <button class="copy-btn" onclick="event.stopPropagation(); copyToClipboard(this.parentElement)">Copiar</button>
-            </div>
-        </div>
-
-        <div class="photo-item">
-            <img src="kelsetsbs_car2.jpg" alt="Car 2" onclick="openImage('kelsetsbs_car2.jpg')">
-            <div class="url-box" onclick="copyToClipboard(this)">
-                https://chaphotos.vercel.app/kelsetsbs_car2.jpg
-                <button class="copy-btn" onclick="event.stopPropagation(); copyToClipboard(this.parentElement)">Copiar</button>
-            </div>
-        </div>
-
-        <div class="photo-item">
-            <img src="kelsetsbs_car5.jpg" alt="Car 5" onclick="openImage('kelsetsbs_car5.jpg')">
-            <div class="url-box" onclick="copyToClipboard(this)">
-                https://chaphotos.vercel.app/kelsetsbs_car5.jpg
-                <button class="copy-btn" onclick="event.stopPropagation(); copyToClipboard(this.parentElement)">Copiar</button>
-            </div>
-        </div>
-
+    <div class="container" id="photoContainer">
+        <!-- Las fotos se cargarán dinámicamente con JavaScript -->
     </div>
 
     <script>
-        function copyToClipboard(element) {
-            const text = element.textContent.replace('Copiar', '').trim();
-            navigator.clipboard.writeText(text).then(function() {
-                // Mostrar confirmación visual
-                const originalBg = element.style.backgroundColor;
-                element.style.backgroundColor = '#d4edda';
-                setTimeout(() => {
-                    element.style.backgroundColor = originalBg;
-                }, 1000);
+        // Lista de todas las fotos
+        const photos = [
+            'kelcetsbs_car3.webp',
+            'kelcetsbs_car4.avif', 
+            'kelcetsbs_car6.jpg',
+            'kelcetsbs_car7.webp',
+            'kelcetsbs_car8.jpg',
+            'kelcetsbs_car9.jpg',
+            'kelsetsbs_car1.jpg',
+            'kelsetsbs_car2.jpg',
+            'kelsetsbs_car5.jpg'
+        ];
+
+        // Obtener la URL base actual del sitio
+        const baseURL = window.location.origin;
+        
+        function copyToClipboard(url) {
+            navigator.clipboard.writeText(url).then(function() {
+                // Mostrar confirmación
+                alert('URL copiada: ' + url);
             }).catch(function(err) {
                 console.error('Error al copiar: ', err);
                 // Fallback para navegadores más antiguos
                 const textArea = document.createElement('textarea');
-                textArea.value = text;
+                textArea.value = url;
                 document.body.appendChild(textArea);
                 textArea.select();
                 document.execCommand('copy');
                 document.body.removeChild(textArea);
+                alert('URL copiada: ' + url);
             });
         }
 
         function openImage(imageName) {
-            window.open('https://chaphotos.vercel.app/' + imageName, '_blank');
+            const fullURL = baseURL + '/' + imageName;
+            window.open(fullURL, '_blank');
         }
+
+        // Generar el contenido dinámicamente cuando la página carga
+        document.addEventListener('DOMContentLoaded', function() {
+            const container = document.getElementById('photoContainer');
+            
+            photos.forEach(function(photoName) {
+                const fullURL = baseURL + '/' + photoName;
+                const carNumber = photoName.match(/car(\d+)/)[1];
+                
+                const photoItem = document.createElement('div');
+                photoItem.className = 'photo-item';
+                
+                photoItem.innerHTML = `
+                    <div class="photo-name">Car ${carNumber}</div>
+                    <img src="${photoName}" alt="Car ${carNumber}" onclick="openImage('${photoName}')">
+                    <div class="url-box" onclick="copyToClipboard('${fullURL}')">
+                        ${fullURL}
+                        <button class="copy-btn" onclick="event.stopPropagation(); copyToClipboard('${fullURL}')">Copiar</button>
+                    </div>
+                `;
+                
+                container.appendChild(photoItem);
+            });
+        });
     </script>
 </body>
 </html>
