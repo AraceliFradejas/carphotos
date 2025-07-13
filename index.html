@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Photos Gallery - URLs para PowerApps</title>
+    <title>Car Photos - URLs para PowerApps</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -12,31 +12,12 @@
             padding: 20px;
             background-color: #f5f5f5;
         }
-        .section-header {
-            background: linear-gradient(135deg, #007bff, #0056b3);
-            color: white;
-            padding: 20px;
-            border-radius: 8px;
-            margin: 30px 0 20px 0;
-            text-align: center;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-        .section-header h2 {
-            margin: 0;
-            font-size: 24px;
-        }
         .photo-item {
             background: white;
             padding: 20px;
             margin: 20px 0;
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        .photo-item.staff {
-            border-left: 4px solid #28a745;
-        }
-        .photo-item.car {
-            border-left: 4px solid #007bff;
         }
         .photo-item img {
             width: 300px;
@@ -72,137 +53,85 @@
         .copy-btn:hover {
             background: #0056b3;
         }
-        .copy-btn.staff {
-            background: #28a745;
-        }
-        .copy-btn.staff:hover {
-            background: #1e7e34;
-        }
         h1 {
             text-align: center;
             color: #333;
-            margin-bottom: 10px;
         }
         h2 {
             color: #666;
             margin-bottom: 10px;
         }
-        .subtitle {
-            text-align: center;
-            color: #666;
-            margin-bottom: 30px;
-            font-style: italic;
-        }
     </style>
 </head>
 <body>
-    <h1>Photos Gallery - URLs para PowerApps</h1>
-    <p class="subtitle">Imágenes de coches y personal con URLs directas para usar en PowerApps</p>
+    <h1>Car Photos - URLs para PowerApps</h1>
     
-    <!-- SECCIÓN DE COCHES -->
-    <div class="section-header">
-        <h2>🚗 COCHES</h2>
-    </div>
-    
-    <div class="photo-item car">
+    <div class="photo-item">
         <h2>Car 1</h2>
         <img src="kelsetsbs_car1.jpg" alt="Car 1" onclick="window.open('./kelsetsbs_car1.jpg', '_blank')">
         <div class="url-text" id="url1">LOADING...</div>
         <button class="copy-btn" onclick="copyURL('url1')">Copiar URL</button>
     </div>
 
-    <div class="photo-item car">
+    <div class="photo-item">
         <h2>Car 2</h2>
         <img src="kelsetsbs_car2.jpg" alt="Car 2" onclick="window.open('./kelsetsbs_car2.jpg', '_blank')">
         <div class="url-text" id="url2">LOADING...</div>
         <button class="copy-btn" onclick="copyURL('url2')">Copiar URL</button>
     </div>
 
-    <div class="photo-item car">
+    <div class="photo-item">
         <h2>Car 3</h2>
         <img src="kelcetsbs_car3.webp" alt="Car 3" onclick="window.open('./kelcetsbs_car3.webp', '_blank')">
         <div class="url-text" id="url3">LOADING...</div>
         <button class="copy-btn" onclick="copyURL('url3')">Copiar URL</button>
     </div>
 
-    <div class="photo-item car">
+    <div class="photo-item">
         <h2>Car 4</h2>
         <img src="kelcetsbs_car4.avif" alt="Car 4" onclick="window.open('./kelcetsbs_car4.avif', '_blank')">
         <div class="url-text" id="url4">LOADING...</div>
         <button class="copy-btn" onclick="copyURL('url4')">Copiar URL</button>
     </div>
 
-    <div class="photo-item car">
+    <div class="photo-item">
         <h2>Car 5</h2>
         <img src="kelsetsbs_car5.jpg" alt="Car 5" onclick="window.open('./kelsetsbs_car5.jpg', '_blank')">
         <div class="url-text" id="url5">LOADING...</div>
         <button class="copy-btn" onclick="copyURL('url5')">Copiar URL</button>
     </div>
 
-    <div class="photo-item car">
+    <div class="photo-item">
         <h2>Car 6</h2>
         <img src="kelcetsbs_car6.jpg" alt="Car 6" onclick="window.open('./kelcetsbs_car6.jpg', '_blank')">
         <div class="url-text" id="url6">LOADING...</div>
         <button class="copy-btn" onclick="copyURL('url6')">Copiar URL</button>
     </div>
 
-    <div class="photo-item car">
+    <div class="photo-item">
         <h2>Car 7</h2>
         <img src="kelcetsbs_car7.webp" alt="Car 7" onclick="window.open('./kelcetsbs_car7.webp', '_blank')">
         <div class="url-text" id="url7">LOADING...</div>
         <button class="copy-btn" onclick="copyURL('url7')">Copiar URL</button>
     </div>
 
-    <div class="photo-item car">
+    <div class="photo-item">
         <h2>Car 8</h2>
         <img src="kelcetsbs_car8.jpg" alt="Car 8" onclick="window.open('./kelcetsbs_car8.jpg', '_blank')">
         <div class="url-text" id="url8">LOADING...</div>
         <button class="copy-btn" onclick="copyURL('url8')">Copiar URL</button>
     </div>
 
-    <div class="photo-item car">
+    <div class="photo-item">
         <h2>Car 9</h2>
         <img src="kelcetsbs_car9.jpg" alt="Car 9" onclick="window.open('./kelcetsbs_car9.jpg', '_blank')">
         <div class="url-text" id="url9">LOADING...</div>
         <button class="copy-btn" onclick="copyURL('url9')">Copiar URL</button>
     </div>
 
-    <!-- SECCIÓN DE STAFF -->
-    <div class="section-header">
-        <h2>👥 PERSONAL / STAFF</h2>
-    </div>
-
-    <div class="photo-item staff">
-        <h2>CEO - Chief Executive Officer</h2>
-        <img src="ktsbs_staff_CEO.png" alt="CEO" onclick="window.open('./ktsbs_staff_CEO.png', '_blank')">
-        <div class="url-text" id="staff1">LOADING...</div>
-        <button class="copy-btn staff" onclick="copyURL('staff1')">Copiar URL</button>
-    </div>
-
-    <div class="photo-item staff">
-        <h2>CCO - Chief Commercial Officer</h2>
-        <img src="ktsbs_staff_CCO.webp" alt="CCO" onclick="window.open('./ktsbs_staff_CCO.webp', '_blank')">
-        <div class="url-text" id="staff2">LOADING...</div>
-        <button class="copy-btn staff" onclick="copyURL('staff2')">Copiar URL</button>
-    </div>
-
-    <div class="photo-item staff">
-        <h2>CIO - Chief Information Officer</h2>
-        <img src="ktsbs_staff_CIO.png" alt="CIO" onclick="window.open('./ktsbs_staff_CIO.png', '_blank')">
-        <div class="url-text" id="staff3">LOADING...</div>
-        <button class="copy-btn staff" onclick="copyURL('staff3')">Copiar URL</button>
-    </div>
-
-    <div class="photo-item staff">
-        <h2>CHRO - Chief Human Resources Officer</h2>
-        <img src="ktsbs_staff_CHRO.png" alt="CHRO" onclick="window.open('./ktsbs_staff_CHRO.png', '_blank')">
-        <div class="url-text" id="staff4">LOADING...</div>
-        <button class="copy-btn staff" onclick="copyURL('staff4')">Copiar URL</button>
-    </div>
-
     <script>
-        // URLs de las fotos de coches
-        const carFiles = [
+        // URLs de las fotos
+        const photoFiles = [
             'kelsetsbs_car1.jpg',
             'kelsetsbs_car2.jpg', 
             'kelcetsbs_car3.webp',
@@ -212,14 +141,6 @@
             'kelcetsbs_car7.webp',
             'kelcetsbs_car8.jpg',
             'kelcetsbs_car9.jpg'
-        ];
-
-        // URLs de las fotos de staff
-        const staffFiles = [
-            'ktsbs_staff_CEO.png',
-            'ktsbs_staff_CCO.webp',
-            'ktsbs_staff_CIO.png',
-            'ktsbs_staff_CHRO.png'
         ];
 
         // Función para copiar URL
@@ -245,22 +166,10 @@
         window.addEventListener('load', function() {
             const baseURL = window.location.origin;
             
-            // Cargar URLs de coches
-            carFiles.forEach(function(fileName, index) {
+            photoFiles.forEach(function(fileName, index) {
                 const urlElement = document.getElementById('url' + (index + 1));
-                if (urlElement) {
-                    const fullURL = baseURL + '/' + fileName;
-                    urlElement.textContent = fullURL;
-                }
-            });
-
-            // Cargar URLs de staff
-            staffFiles.forEach(function(fileName, index) {
-                const urlElement = document.getElementById('staff' + (index + 1));
-                if (urlElement) {
-                    const fullURL = baseURL + '/' + fileName;
-                    urlElement.textContent = fullURL;
-                }
+                const fullURL = baseURL + '/' + fileName;
+                urlElement.textContent = fullURL;
             });
         });
     </script>
