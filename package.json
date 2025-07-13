@@ -1,0 +1,12 @@
+{
+  "name": "carphotos",
+  "version": "1.0.0",
+  "description": "Car photos gallery with URLs for PowerApps",
+  "main": "index.html",
+  "scripts": {
+    "start": "serve ."
+  },
+  "keywords": ["photos", "gallery", "powerapps"],
+  "author": "AraceliFradejas",
+  "license": "MIT"
+}
