@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Photos - URLs para PowerApps</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            display: grid;
+            gap: 20px;
+        }
+        .photo-item {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .photo-item img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+        .url-box {
+            background: #f8f9fa;
+            padding: 10px;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 14px;
+            word-break: break-all;
+            cursor: pointer;
+        }
+        .url-box:hover {
+            background: #e9ecef;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .copy-btn {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-left: 10px;
+            font-size: 12px;
+        }
+        .copy-btn:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Car Photos - URLs para PowerApps</h1>
+    <div class="container">
+        
+        <div class="photo-item">
+            <img src="kelcetsbs_car3.webp" alt="Car 3">
+            <div class="url-box" onclick="copyToClipboard(this)">
+                ./kelcetsbs_car3.webp
+                <button class="copy-btn" onclick="event.stopPropagation(); copyToClipboard(this.parentElement)">Copiar</button>
+            </div>
+        </div>
+
+        <div class="photo-item">
+            <img src="kelcetsbs_car4.avif" alt="Car 4">
+            <div class="url-box" onclick="copyToClipboard(this)">
+                ./kelcetsbs_car4.avif
+                <button class="copy-btn" onclick="event.stopPropagation(); copyToClipboard(this.parentElement)">Copiar</button>
+            </div>
+        </div>
+
+        <div class="photo-item">
+            <img src="kelcetsbs_car6.jpg" alt="Car 6">
+            <div class="url-box" onclick="copyToClipboard(this)">
+                ./kelcetsbs_car6.jpg
+                <button class="copy-btn" onclick="event.stopPropagation(); copyToClipboard(this.parentElement)">Copiar</button>
+            </div>
+        </div>
+
+        <div class="photo-item">
+            <img src="kelcetsbs_car7.webp" alt="Car 7">
+            <div class="url-box" onclick="copyToClipboard(this)">
+                ./kelcetsbs_car7.webp
+                <button class="copy-btn" onclick="event.stopPropagation(); copyToClipboard(this.parentElement)">Copiar</button>
+            </div>
+        </div>
+
+        <div class="photo-item">
+            <img src="kelcetsbs_car8.jpg" alt="Car 8">
+            <div class="url-box" onclick="copyToClipboard(this)">
+                ./kelcetsbs_car8.jpg
+                <button class="copy-btn" onclick="event.stopPropagation(); copyToClipboard(this.parentElement)">Copiar</button>
+            </div>
+        </div>
+
+        <div class="photo-item">
+            <img src="kelcetsbs_car9.jpg" alt="Car 9">
+            <div class="url-box" onclick="copyToClipboard(this)">
+                ./kelcetsbs_car9.jpg
+                <button class="copy-btn" onclick="event.stopPropagation(); copyToClipboard(this.parentElement)">Copiar</button>
+            </div>
+        </div>
+
+        <div class="photo-item">
+            <img src="kelsetsbs_car1.jpg" alt="Car 1">
+            <div class="url-box" onclick="copyToClipboard(this)">
+                ./kelsetsbs_car1.jpg
+                <button class="copy-btn" onclick="event.stopPropagation(); copyToClipboard(this.parentElement)">Copiar</button>
+            </div>
+        </div>
+
+        <div class="photo-item">
+            <img src="kelsetsbs_car2.jpg" alt="Car 2">
+            <div class="url-box" onclick="copyToClipboard(this)">
+                ./kelsetsbs_car2.jpg
+                <button class="copy-btn" onclick="event.stopPropagation(); copyToClipboard(this.parentElement)">Copiar</button>
+            </div>
+        </div>
+
+        <div class="photo-item">
+            <img src="kelsetsbs_car5.jpg" alt="Car 5">
+            <div class="url-box" onclick="copyToClipboard(this)">
+                ./kelsetsbs_car5.jpg
+                <button class="copy-btn" onclick="event.stopPropagation(); copyToClipboard(this.parentElement)">Copiar</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function copyToClipboard(element) {
+            const text = element.textContent.replace('Copiar', '').trim();
+            navigator.clipboard.writeText(text).then(function() {
+                // Mostrar confirmación visual
+                const originalBg = element.style.backgroundColor;
+                element.style.backgroundColor = '#d4edda';
+                setTimeout(() => {
+                    element.style.backgroundColor = originalBg;
+                }, 1000);
+            }).catch(function(err) {
+                console.error('Error al copiar: ', err);
+                // Fallback para navegadores más antiguos
+                const textArea = document.createElement('textarea');
+                textArea.value = text;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+            });
+        }
+    </script>
+</body>
+</html>
